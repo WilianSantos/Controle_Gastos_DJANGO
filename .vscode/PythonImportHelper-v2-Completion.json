@@ -1,5 +1,54 @@
 [
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -21,14 +70,6 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -147,6 +188,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "app_core.migrations.0001_initial",
+        "description": "app_core.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Usuario',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('nome', models.CharField(max_length=50, verbose_name='Nome')),",
+        "detail": "app_core.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "app_core.migrations.0002_rename_renda_rendas_and_more",
+        "description": "app_core.migrations.0002_rename_renda_rendas_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0001_initial'),\n    ]\n    operations = [\n        migrations.RenameModel(\n            old_name='Renda',\n            new_name='Rendas',\n        ),\n        migrations.RenameField(",
+        "detail": "app_core.migrations.0002_rename_renda_rendas_and_more",
+        "documentation": {}
+    },
+    {
         "label": "AppCoreConfig",
         "kind": 6,
         "importPath": "app_core.apps",
@@ -160,7 +219,25 @@
         "kind": 6,
         "importPath": "app_core.models",
         "description": "app_core.models",
-        "peekOfCode": "class Usuario(models.model):\n    nome = models.CharField('Nome', max_length=50)",
+        "peekOfCode": "class Usuario(models.Model):\n    nome = models.CharField('Nome', max_length=50)\n    email = models.EmailField()\n    senha = models.CharField(max_length=60)\n    renda = models.FloatField(null=True)\n    def __str__(self):\n        return self.nome\nclass Rendas(models.Model):\n    renda_principal = models.FloatField()\n    renda_secundaria = models.FloatField()",
+        "detail": "app_core.models",
+        "documentation": {}
+    },
+    {
+        "label": "Rendas",
+        "kind": 6,
+        "importPath": "app_core.models",
+        "description": "app_core.models",
+        "peekOfCode": "class Rendas(models.Model):\n    renda_principal = models.FloatField()\n    renda_secundaria = models.FloatField()\n    data = models.DateTimeField()\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.renda_principal\nclass Gastos(models.Model):\n    gasto = models.CharField('Gasto', max_length=80)\n    valor = models.FloatField()",
+        "detail": "app_core.models",
+        "documentation": {}
+    },
+    {
+        "label": "Gastos",
+        "kind": 6,
+        "importPath": "app_core.models",
+        "description": "app_core.models",
+        "peekOfCode": "class Gastos(models.Model):\n    gasto = models.CharField('Gasto', max_length=80)\n    valor = models.FloatField()\n    data = models.DateTimeField()\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.gasto",
         "detail": "app_core.models",
         "documentation": {}
     },
