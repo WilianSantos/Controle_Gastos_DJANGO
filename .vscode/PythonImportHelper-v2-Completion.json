@@ -156,6 +156,15 @@
         "documentation": {}
     },
     {
+        "label": "Usuario",
+        "kind": 6,
+        "importPath": "app_core.models",
+        "description": "app_core.models",
+        "peekOfCode": "class Usuario(models.model):\n    nome = models.CharField('Nome', max_length=50)",
+        "detail": "app_core.models",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "app_core.urls",

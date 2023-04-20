@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
+class Usuario(models.model):
+    nome = models.CharField('Nome', max_length=50)
+    
