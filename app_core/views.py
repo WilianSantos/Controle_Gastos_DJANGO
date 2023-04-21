@@ -20,7 +20,7 @@ def index(request):
 
 def tabela(request):
     return render(request,
-                  'tables.html'
+                  'tables/tables.html'
                   )
     
     
