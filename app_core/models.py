@@ -1,11 +1,13 @@
 from django.db import models
 
+from datetime import datetime
+
 
 class Usuario(models.Model):
-    nome = models.CharField('Nome', max_length=50)
-    email = models.EmailField('Email')
+    nome = models.CharField(max_length=50)
+    email = models.EmailField()
     senha = models.CharField(max_length=60)
-    renda_total = models.FloatField(null=True, default=0)
+    renda_total = models.FloatField(default=0)
     
     def __str__(self):
         return self.nome
@@ -17,12 +19,12 @@ class Usuario(models.Model):
     
 class Rendas(models.Model):
     renda_principal = models.FloatField()
-    renda_secundaria = models.FloatField()
-    data = models.DateTimeField()
+    renda_secundaria = models.FloatField(default=0)
+    data = models.DateTimeField(default=datetime.now())
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.renda_principal
+        return str(self.renda_principal)
     
     class Meta:
         verbose_name = 'Renda'
@@ -30,9 +32,9 @@ class Rendas(models.Model):
     
     
 class Gastos(models.Model):
-    gasto = models.CharField('Gasto', max_length=80)
+    gasto = models.CharField(max_length=80)
     valor = models.FloatField()
-    data = models.DateTimeField()
+    data = models.DateTimeField(default=datetime.now())
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     
     def __str__(self):
