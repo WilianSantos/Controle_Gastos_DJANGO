@@ -32,6 +32,30 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -113,11 +137,19 @@
         "documentation": {}
     },
     {
-        "label": "TemplateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
         "isExtraImport": true,
-        "detail": "django.views.generic",
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "sha256",
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "isExtraImport": true,
+        "detail": "hashlib",
         "documentation": {}
     },
     {
@@ -206,6 +238,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "app_core.migrations.0003_alter_gastos_options_alter_rendas_options_and_more",
+        "description": "app_core.migrations.0003_alter_gastos_options_alter_rendas_options_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0002_rename_renda_rendas_and_more'),\n    ]\n    operations = [\n        migrations.AlterModelOptions(\n            name='gastos',\n            options={'verbose_name': 'Gasto', 'verbose_name_plural': 'Gastos'},\n        ),\n        migrations.AlterModelOptions(",
+        "detail": "app_core.migrations.0003_alter_gastos_options_alter_rendas_options_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "app_core.migrations.0004_remove_usuario_ativo",
+        "description": "app_core.migrations.0004_remove_usuario_ativo",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0003_alter_gastos_options_alter_rendas_options_and_more'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='usuario',\n            name='ativo',\n        ),\n    ]",
+        "detail": "app_core.migrations.0004_remove_usuario_ativo",
+        "documentation": {}
+    },
+    {
         "label": "AppCoreConfig",
         "kind": 6,
         "importPath": "app_core.apps",
@@ -219,7 +269,7 @@
         "kind": 6,
         "importPath": "app_core.models",
         "description": "app_core.models",
-        "peekOfCode": "class Usuario(models.Model):\n    nome = models.CharField('Nome', max_length=50)\n    email = models.EmailField()\n    senha = models.CharField(max_length=60)\n    renda = models.FloatField(null=True)\n    def __str__(self):\n        return self.nome\nclass Rendas(models.Model):\n    renda_principal = models.FloatField()\n    renda_secundaria = models.FloatField()",
+        "peekOfCode": "class Usuario(models.Model):\n    nome = models.CharField('Nome', max_length=50)\n    email = models.EmailField('Email')\n    senha = models.CharField(max_length=60)\n    renda_total = models.FloatField(null=True, default=0)\n    def __str__(self):\n        return self.nome\n    class Meta:\n        verbose_name = 'Usuario'\n        verbose_name_plural = 'Usuarios'",
         "detail": "app_core.models",
         "documentation": {}
     },
@@ -228,7 +278,7 @@
         "kind": 6,
         "importPath": "app_core.models",
         "description": "app_core.models",
-        "peekOfCode": "class Rendas(models.Model):\n    renda_principal = models.FloatField()\n    renda_secundaria = models.FloatField()\n    data = models.DateTimeField()\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.renda_principal\nclass Gastos(models.Model):\n    gasto = models.CharField('Gasto', max_length=80)\n    valor = models.FloatField()",
+        "peekOfCode": "class Rendas(models.Model):\n    renda_principal = models.FloatField()\n    renda_secundaria = models.FloatField()\n    data = models.DateTimeField()\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.renda_principal\n    class Meta:\n        verbose_name = 'Renda'\n        verbose_name_plural = 'Rendas'",
         "detail": "app_core.models",
         "documentation": {}
     },
@@ -237,7 +287,7 @@
         "kind": 6,
         "importPath": "app_core.models",
         "description": "app_core.models",
-        "peekOfCode": "class Gastos(models.Model):\n    gasto = models.CharField('Gasto', max_length=80)\n    valor = models.FloatField()\n    data = models.DateTimeField()\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.gasto",
+        "peekOfCode": "class Gastos(models.Model):\n    gasto = models.CharField('Gasto', max_length=80)\n    valor = models.FloatField()\n    data = models.DateTimeField()\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.gasto\n    class Meta:\n        verbose_name = 'Gasto'\n        verbose_name_plural = 'Gastos'",
         "detail": "app_core.models",
         "documentation": {}
     },
@@ -246,16 +296,16 @@
         "kind": 5,
         "importPath": "app_core.urls",
         "description": "app_core.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', IndexView.as_view(), name='index'),\n    path('tabela', views.tabela, name='tabela')\n]",
+        "peekOfCode": "urlpatterns = [\n    path('index/', views.index, name='index'),\n    path('login/', views.login, name='login'),\n    path('validar_login', views.validar_login, name='validar_login'),\n    path('registrar/', views.registrar, name='registrar'),\n    path('validar_registrar', views.validar_registrar, name='validar_registrar'),\n    path('tabela', views.tabela, name='tabela'),\n    path('sair/', views.sair, name = 'sair')\n]",
         "detail": "app_core.urls",
         "documentation": {}
     },
     {
-        "label": "IndexView",
-        "kind": 6,
+        "label": "index",
+        "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "class IndexView(TemplateView):\n    template_name = 'index.html'\ndef tabela(request):\n    return render(request,\n                  'tables.html'\n                  )",
+        "peekOfCode": "def index(request):\n    if request.session.get('usuario'):\n        usuario_logado = request.session.get('usuario')\n        usuario = Usuario.objects.get(id=request.session['usuario'])\n        return render(request, 'index.html', {'usuario_logado': usuario_logado,\n                                              'usuario': usuario                                   \n        })\n    else:\n        redirect('/login/') \ndef tabela(request):",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -264,7 +314,52 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def tabela(request):\n    return render(request,\n                  'tables.html'\n                  )",
+        "peekOfCode": "def tabela(request):\n    return render(request,\n                  'tables.html'\n                  )\ndef registrar(request):\n    if request.session.get('usuario'):\n        return redirect('index/')\n    status = request.GET.get('status')\n    return render(request, 'register/register.html', {'status': status})\ndef validar_registrar(request):",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "registrar",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def registrar(request):\n    if request.session.get('usuario'):\n        return redirect('index/')\n    status = request.GET.get('status')\n    return render(request, 'register/register.html', {'status': status})\ndef validar_registrar(request):\n    nome = request.POST.get('nome')\n    senha = request.POST.get('senha')\n    confirma_senha = request.POST.get('confirma-senha')\n    email = request.POST.get('email')",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "validar_registrar",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def validar_registrar(request):\n    nome = request.POST.get('nome')\n    senha = request.POST.get('senha')\n    confirma_senha = request.POST.get('confirma-senha')\n    email = request.POST.get('email')\n    usuario = Usuario.objects.filter(email=email)\n    if len(nome.strip()) == 0 or len(email.strip()) == 0:\n        return redirect('/registrar/?status=1')\n    if len(senha) < 8:\n        return redirect('/registrar/?status=2')",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def login(request):\n    if request.session.get('usuario'):\n        return redirect('index/')\n    status = request.GET.get('status')\n    return render(request, 'login/login.html', {'status': status})\ndef validar_login(request):\n    email = request.POST.get('email')\n    senha = request.POST.get('senha')\n    senha = sha256(senha.encode()).hexdigest()\n    usuario = Usuario.objects.filter(email=email).filter(senha=senha)",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "validar_login",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def validar_login(request):\n    email = request.POST.get('email')\n    senha = request.POST.get('senha')\n    senha = sha256(senha.encode()).hexdigest()\n    usuario = Usuario.objects.filter(email=email).filter(senha=senha)\n    if len(usuario) == 0:\n        return redirect('/login/?status=1')\n    elif len(usuario) > 0:\n        request.session['usuario'] = usuario[0].id\n        return redirect('/index/')",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "sair",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def sair(request):\n    request.session.flush()\n    return redirect('/login/')",
         "detail": "app_core.views",
         "documentation": {}
     },

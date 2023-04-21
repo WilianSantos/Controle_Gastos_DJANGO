@@ -1,0 +1,98 @@
+{% extends '../base.html' %}
+{% block 'class_body' %}class="bg-primary"{% endblock 'class_body' %}
+{% block 'conteudo' %}
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <br>
+                        {% if status == '0'%}
+                            <div class="alert alert-success" role="alert">
+                                Cadastro realizado com sucesso
+                            </div>
+                        {% endif %}
+            
+                        {% if status == '1'%}
+                            <div class="alert alert-danger" role="alert">
+                                Nome e email não podem estar vazios.
+                            </div>
+                        {% endif %}
+            
+                        {% if status == '2'%}
+                            <div class="alert alert-danger" role="alert">
+                                Sua senha deve ter pelo menos 8 caracteres
+                            </div>
+                        {% endif %}
+        
+                        {% if status == '3'%}
+                            <div class="alert alert-danger" role="alert">
+                                Suas senhas não correspondem.
+                            </div>
+                        {% endif %}
+                
+                        {% if status == '4'%}
+                            <div class="alert alert-danger" role="alert">
+                                Usuário já existe no sistema
+                            </div>
+                        {% endif %}
+            
+                        {% if status == '5'%}
+                            <div class="alert alert-danger" role="alert">
+                                Erro interno do sistema
+                            </div>
+                        {% endif %}
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Crie sua conta</h3></div>
+                                    <div class="card-body">
+                                        <form action="{% url 'validar_registrar' %}" method="POST">
+                                            {% csrf_token %}
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input name="nome" class="form-control" id="inputFirstName" type="text" placeholder="Digite seu nome" />
+                                                        <label for="inputFirstName">Nome</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input name="email" class="form-control" id="inputEmail" type="email" placeholder="nome@exemplo.com" />
+                                                <label for="inputEmail">Email</label>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input name="senha" class="form-control" id="inputPassword" type="password" placeholder="Digite sua senha" />
+                                                        <label for="inputPassword">Senha</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input name="confirma-senha" class="form-control" id="inputPasswordConfirm" type="password" placeholder="Comfirme sua senha" />
+                                                        <label for="inputPasswordConfirm">Confirme sua senha</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="Criar conta"></div>
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="{% url 'login' %}">Login</a></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-footer text-center py-3">
+                                        <div class="small"><a href="{% url 'login' %}">Ja tem uma conta? Vamos para login</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutAuthentication_footer">
+                {% include '../footer.html' %}
+            </div>
+        </div>
+{% endblock 'conteudo' %}
