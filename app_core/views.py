@@ -28,9 +28,13 @@ def index(request):
         form_renda = AdicionarRenda()
         form_renda.fields['usuario'].initial = request.session['usuario']
         
+        contador = 0
+        
         return render(request, 'index.html', {'usuario_logado': usuario_logado,
                                               'usuario': usuario,
-                                              'form_renda': form_renda                                  
+                                              'form_renda': form_renda,
+                                              'rendas': rendas,
+                                              'contador': contador                                  
         })
     else:
         redirect('/login/') 
@@ -123,3 +127,35 @@ def adicionar_renda(request):
             return redirect('/index/')
         else:
             return redirect('/index/')
+        
+        
+def ver_renda(request, id):
+    if request.session.get('usuario'):
+        renda = Rendas.objects.get(id=id)
+        if request.session.get('usuario') == renda.usuario.id:
+            
+            return render(request, 'forms/form_renda.html', {'renda': renda})
+        else:
+            return HttpResponse('Esta não é uma renda sua')
+    return redirect('/login/?status=2')
+
+
+def alterar_renda(request):
+    renda_id = request.POST.get('renda_id')
+    renda_principal = request.POST.get('renda_principal')
+    renda_secundaria = request.POST.get('renda_secundaria')
+    
+    renda = Rendas.objects.get(id=renda_id)
+    if renda.usuario.id == request.session['usuario']:
+        
+        renda.renda_principal = float(renda_principal.replace(',', '.'))
+        renda.renda_secundaria = float(renda_secundaria.replace(',', '.'))
+        renda.save()
+        return redirect(f'/index/')
+    else:
+        return redirect('/login/')
+    
+    
+def excluir_renda(request, id):
+    renda = Rendas.objects.get(id=id).delete()
+    return redirect(f'/index/')
