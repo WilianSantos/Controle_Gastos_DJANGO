@@ -8,9 +8,11 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Controle de Gastos</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+        <link href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+        
     </head>
     <body {% block 'class_body' %}{% endblock 'class_body' %} >
 
@@ -21,5 +23,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="{% static 'assets/demo/chart-area-demo.js' %}"></script>
         <script src="{% static 'assets/demo/chart-bar-demo.js' %}"></script>
+        <script src="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.js"></script>
     </body>
 </html>
