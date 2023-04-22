@@ -426,11 +426,19 @@
         "documentation": {}
     },
     {
-        "label": "localize",
-        "importPath": "django.utils.formats",
-        "description": "django.utils.formats",
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
         "isExtraImport": true,
-        "detail": "django.utils.formats",
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "Paginator",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
         "documentation": {}
     },
     {
@@ -693,7 +701,16 @@
         "kind": 6,
         "importPath": "app_core.forms",
         "description": "app_core.forms",
-        "peekOfCode": "class AdicionarRenda(forms.ModelForm):\n    class Meta:\n        model = Rendas\n        fields = '__all__'\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields['usuario'].widget = forms.HiddenInput()",
+        "peekOfCode": "class AdicionarRenda(forms.ModelForm):\n    class Meta:\n        model = Rendas\n        fields = '__all__'\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields['usuario'].widget = forms.HiddenInput()\nclass AdicionarGasto(forms.ModelForm):\n    class Meta:\n        model = Gastos",
+        "detail": "app_core.forms",
+        "documentation": {}
+    },
+    {
+        "label": "AdicionarGasto",
+        "kind": 6,
+        "importPath": "app_core.forms",
+        "description": "app_core.forms",
+        "peekOfCode": "class AdicionarGasto(forms.ModelForm):\n    class Meta:\n        model = Gastos\n        fields = '__all__'\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields['usuario'].widget = forms.HiddenInput()",
         "detail": "app_core.forms",
         "documentation": {}
     },
@@ -819,7 +836,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def alterar_renda(request):\n    renda_id = request.POST.get('renda_id')\n    renda_principal = request.POST.get('renda_principal')\n    renda_secundaria = request.POST.get('renda_secundaria')\n    renda = Rendas.objects.get(id=renda_id)\n    if renda.usuario.id == request.session['usuario']:\n        renda.renda_principal = float(renda_principal.replace(',', '.'))\n        renda.renda_secundaria = float(renda_secundaria.replace(',', '.'))\n        renda.save()\n        return redirect(f'/index/')",
+        "peekOfCode": "def alterar_renda(request):\n    renda_id = request.POST.get('renda_id')\n    renda_principal = request.POST.get('renda_principal')\n    renda_secundaria = request.POST.get('renda_secundaria')\n    renda = Rendas.objects.get(id=renda_id)\n    if renda.usuario.id == request.session['usuario']:\n        renda.renda_principal = float(renda_principal.replace(',', '.'))\n        renda.renda_secundaria = float(renda_secundaria.replace(',', '.'))\n        renda.save()\n        return redirect('/index/')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -828,7 +845,43 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def excluir_renda(request, id):\n    renda = Rendas.objects.get(id=id).delete()\n    return redirect(f'/index/')",
+        "peekOfCode": "def excluir_renda(request, id):\n    renda = Rendas.objects.get(id=id).delete()\n    return redirect('/index/')\ndef adicionar_gasto(request):\n    if request.method == 'POST':\n        form_gasto = AdicionarGasto(request.POST)\n        if form_gasto.is_valid:\n            form_gasto.save()\n            return redirect('/index/')\n        else:",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "adicionar_gasto",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def adicionar_gasto(request):\n    if request.method == 'POST':\n        form_gasto = AdicionarGasto(request.POST)\n        if form_gasto.is_valid:\n            form_gasto.save()\n            return redirect('/index/')\n        else:\n            return redirect('/index/')\ndef ver_gasto(request, id):\n    if request.session.get('usuario'):",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "ver_gasto",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def ver_gasto(request, id):\n    if request.session.get('usuario'):\n        gasto = Gastos.objects.get(id=id)\n        if request.session.get('usuario') == gasto.usuario.id:\n            return render(request, 'forms/form_gasto.html', {'gasto': gasto})\n        else:\n            return HttpResponse('Esta não é uma renda sua') \n    else:\n        return redirect('/login/')\ndef alterar_gasto(request):",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "alterar_gasto",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def alterar_gasto(request):\n    gasto_id = request.POST.get('gasto_id')\n    gasto_nome = request.POST.get('gasto_nome')\n    gasto_valor = request.POST.get('gasto_valor')\n    gasto = Gastos.objects.get(id=gasto_id)\n    if gasto.usuario.id == request.session['usuario']:\n        gasto.gasto = gasto_nome\n        gasto.valor = float(gasto_valor.replace(',', '.'))\n        gasto.save()\n        return redirect('/index/')",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "excluir_gasto",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def excluir_gasto(request, id):\n    gasto = Gastos.objects.get(id=id).delete()\n    return redirect('/index/')",
         "detail": "app_core.views",
         "documentation": {}
     },

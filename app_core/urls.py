@@ -16,6 +16,11 @@ urlpatterns = [
     path('alterar_renda', views.alterar_renda, name='alterar_renda'),
     path('excluir_renda/<int:id>', views.excluir_renda, name='excluir_renda'),
     
+    path('adicionar_gasto', views.adicionar_gasto, name='adicionar_gasto'),
+    path('ver_gasto/<int:id>', views.ver_gasto, name='ver_gasto'),
+    path('alterar_gasto', views.alterar_gasto, name='alterar_gasto'),
+    path('excluir_gasto/<int:id>', views.excluir_gasto, name='excluir_gasto'),
+    
     path('tabela', views.tabela, name='tabela'),
     path('sair/', views.sair, name = 'sair')
 ]

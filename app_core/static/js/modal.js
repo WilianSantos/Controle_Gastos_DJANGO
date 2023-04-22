@@ -5,9 +5,9 @@ myModalRenda.addEventListener('shown.bs.modal', function () {
   myInputRenda.focus()
 })
 
-var myModalAcessarRenda = document.getElementById('modalAcessarRenda')
-var myInputAcessarRenda = document.getElementById('modalAcessarRenda')
+var myModalGasto = document.getElementById('modalAdicionarGasto')
+var myInputGasto = document.getElementById('modalAdicionarGasto')
 
-myModalAcessarRenda.addEventListener('shown.bs.modal', function () {
-  myInputAcessarRenda.focus()
+myModalGasto.addEventListener('shown.bs.modal', function () {
+  myInputGasto.focus()
 })

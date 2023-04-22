@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block 'class_body' %}class="sb-nav-fixed"{% endblock 'class_body' %}
+{% block 'conteudo' %}        
+        {% include 'menu.html' %}
+        <div id="layoutSidenav">
+            
+            {% include 'lateral_menu.html' %}
+
+            <div id="layoutSidenav_content">
+                <h1 class="mt-4">Formulario Renda</h1>
+                <div class="container">
+                    <form action="{% url 'alterar_gasto' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{gasto.id}}" name="gasto_id">
+                        <p>
+                            <label>Gasto</label>
+                            <input class="form-control" type="text" value="{{ gasto.gasto }}" name="gasto_nome">
+                        </p>
+                        <p>
+                            <label>Valor</label>
+                            <input class="form-control" type="text" value="{{ gasto.valor }}" name="gasto_valor">
+                        </p>
+                        <p>
+                            <label>Data: {{ gasto.data }}</label>
+                        </p>
+                        
+                        <input type="submit" class="btn btn-success" value="Salvar">
+                    </form>
+                </div>
+                {% include 'footer.html' %}
+            </div>
+        </div>
+{% endblock 'conteudo' %}

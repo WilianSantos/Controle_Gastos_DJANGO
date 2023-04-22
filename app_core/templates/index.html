@@ -19,17 +19,17 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Renda Total: {{usuario.renda_total}} </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" data-bs-toggle="modal" data-bs-target="#modalAdicionarRenda">Adicionar Renda</a>
+                                        <a class="btn text-white stretched-link" data-bs-toggle="modal" data-bs-target="#modalAdicionarRenda">Adicionar Rendas</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
+                                    <div class="card-body">Gastos do mês: {{gasto_mes}} </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        <a class="btn text-white stretched-link" data-bs-toggle="modal" data-bs-target="#modalAdicionarGasto">Adicionar Gastos</a>
+                                        <div class="small text-white "><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -80,6 +80,27 @@
 
                 </div>
               </div>
+            </div>
+        </div>
+        <!-- Modal Adicionar Gasto-->
+        <div class="modal fade" id="modalAdicionarGasto" tabindex="-1" aria-labelledby="modalAdicionarGasto" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="modalAdicionarGastoLabel">Adicionar Renda</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="{% url 'adicionar_gasto' %}" method="POST">
+                        {% csrf_token %}
+                        <table>
+                            {{ form_gasto.as_table }}
+                        </table>
+                        <input type="submit" class="btn btn-success" value="Adicionar">
+                    </form>
+
+                </div>
             </div>
         </div>
         <script src="{% static 'js/modal.js' %}"></script>
