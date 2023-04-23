@@ -1,0 +1,31 @@
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Tabela de Gastos
+    </div>
+    <div class="card-body">
+        <table class="table" id="table-gasto">
+            <thead>
+                <tr>
+                    <th scope="col">Gasto</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Alterar</th>
+                    <th scope="col">Excluir</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for gasto in gastos %}
+                    <tr>
+                        <td> {{ gasto.gasto }} </td>
+                        <td> {{ gasto.valor }} </td>
+                        <td> {{ gasto.data }} </td>
+                        <td><a href="{% url 'ver_gasto' gasto.id %}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td><a href="{% url 'excluir_gasto' gasto.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a></td>
+                    </tr> 
+                {% endfor %}           
+            </tbody>
+        </table>
+    </div>
+</div>
