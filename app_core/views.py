@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
-from django.core.paginator import Paginator
 
 from hashlib import sha256
 from datetime import datetime
@@ -38,9 +37,6 @@ def index(request):
         form_gasto = AdicionarGasto()
         form_gasto.fields['usuario'].initial = request.session['usuario']
         
-        gasto_paginator = Paginator(gastos, 3)
-        page_num_gasto = request.GET.get('page')
-        page_gasto = gasto_paginator.get_page(page_num_gasto)
         
         return render(request, 'index.html', {'usuario_logado': usuario_logado,
                                               'usuario': usuario,
@@ -48,17 +44,10 @@ def index(request):
                                               'rendas': rendas,
                                               'gastos': gastos,
                                               'form_gasto': form_gasto,
-                                              'gasto_mes': gasto_mes,
-                                              'page_gasto': page_gasto                                  
+                                              'gasto_mes': gasto_mes                                
         })
     else:
         redirect('/login/') 
-    
-
-def tabela(request):
-    return render(request,
-                  'tables/tables.html'
-                  )
     
     
 def registrar(request):
@@ -166,15 +155,20 @@ def alterar_renda(request):
         renda.renda_principal = float(renda_principal.replace(',', '.'))
         renda.renda_secundaria = float(renda_secundaria.replace(',', '.'))
         renda.save()
-        return redirect('/index/')
+        return redirect('/tabela_renda/')
     else:
         return redirect('/login/')
     
     
 def excluir_renda(request, id):
     renda = Rendas.objects.get(id=id).delete()
-    return redirect('/index/')
+    return redirect('/tabela_renda/')
 
+
+def tabela_renda(request):
+    rendas = Rendas.objects.filter(usuario=request.session['usuario'])
+    
+    return render(request, 'tables/table_renda.html', {'rendas': rendas})
 
 def adicionar_gasto(request):
     if request.method == 'POST':
@@ -209,11 +203,17 @@ def alterar_gasto(request):
         gasto.gasto = gasto_nome
         gasto.valor = float(gasto_valor.replace(',', '.'))
         gasto.save()
-        return redirect('/index/')
+        return redirect('/tabela_gasto/')
     else:
         return redirect('/login/')
     
     
 def excluir_gasto(request, id):
     gasto = Gastos.objects.get(id=id).delete()
-    return redirect('/index/')
+    return redirect('/tabela_gasto/')
+
+
+def tabela_gasto(request):
+    gastos = Gastos.objects.filter(usuario=request.session['usuario'])
+    
+    return render(request, 'tables/table_gasto.html', {'gastos': gastos})

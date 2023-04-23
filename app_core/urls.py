@@ -21,6 +21,8 @@ urlpatterns = [
     path('alterar_gasto', views.alterar_gasto, name='alterar_gasto'),
     path('excluir_gasto/<int:id>', views.excluir_gasto, name='excluir_gasto'),
     
-    path('tabela', views.tabela, name='tabela'),
+    path('tabela_renda/', views.tabela_renda, name='tabela_renda'),
+    path('tabela_gasto/', views.tabela_gasto, name='tabela_gasto'),
+    
     path('sair/', views.sair, name = 'sair')
 ]

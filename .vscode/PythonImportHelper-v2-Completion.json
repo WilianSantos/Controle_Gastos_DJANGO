@@ -434,14 +434,6 @@
         "documentation": {}
     },
     {
-        "label": "Paginator",
-        "importPath": "django.core.paginator",
-        "description": "django.core.paginator",
-        "isExtraImport": true,
-        "detail": "django.core.paginator",
-        "documentation": {}
-    },
-    {
         "label": "sha256",
         "importPath": "hashlib",
         "description": "hashlib",
@@ -760,15 +752,6 @@
         "documentation": {}
     },
     {
-        "label": "tabela",
-        "kind": 2,
-        "importPath": "app_core.views",
-        "description": "app_core.views",
-        "peekOfCode": "def tabela(request):\n    return render(request,\n                  'tables/tables.html'\n                  )\ndef registrar(request):\n    if request.session.get('usuario'):\n        return redirect('index/')\n    status = request.GET.get('status')\n    return render(request, 'register/register.html', {'status': status})\ndef validar_registrar(request):",
-        "detail": "app_core.views",
-        "documentation": {}
-    },
-    {
         "label": "registrar",
         "kind": 2,
         "importPath": "app_core.views",
@@ -836,7 +819,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def alterar_renda(request):\n    renda_id = request.POST.get('renda_id')\n    renda_principal = request.POST.get('renda_principal')\n    renda_secundaria = request.POST.get('renda_secundaria')\n    renda = Rendas.objects.get(id=renda_id)\n    if renda.usuario.id == request.session['usuario']:\n        renda.renda_principal = float(renda_principal.replace(',', '.'))\n        renda.renda_secundaria = float(renda_secundaria.replace(',', '.'))\n        renda.save()\n        return redirect('/index/')",
+        "peekOfCode": "def alterar_renda(request):\n    renda_id = request.POST.get('renda_id')\n    renda_principal = request.POST.get('renda_principal')\n    renda_secundaria = request.POST.get('renda_secundaria')\n    renda = Rendas.objects.get(id=renda_id)\n    if renda.usuario.id == request.session['usuario']:\n        renda.renda_principal = float(renda_principal.replace(',', '.'))\n        renda.renda_secundaria = float(renda_secundaria.replace(',', '.'))\n        renda.save()\n        return redirect('/tabela_renda/')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -845,7 +828,16 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def excluir_renda(request, id):\n    renda = Rendas.objects.get(id=id).delete()\n    return redirect('/index/')\ndef adicionar_gasto(request):\n    if request.method == 'POST':\n        form_gasto = AdicionarGasto(request.POST)\n        if form_gasto.is_valid:\n            form_gasto.save()\n            return redirect('/index/')\n        else:",
+        "peekOfCode": "def excluir_renda(request, id):\n    renda = Rendas.objects.get(id=id).delete()\n    return redirect('/tabela_renda/')\ndef tabela_renda(request):\n    rendas = Rendas.objects.filter(usuario=request.session['usuario'])\n    return render(request, 'tables/table_renda.html', {'rendas': rendas})\ndef adicionar_gasto(request):\n    if request.method == 'POST':\n        form_gasto = AdicionarGasto(request.POST)\n        if form_gasto.is_valid:",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "tabela_renda",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def tabela_renda(request):\n    rendas = Rendas.objects.filter(usuario=request.session['usuario'])\n    return render(request, 'tables/table_renda.html', {'rendas': rendas})\ndef adicionar_gasto(request):\n    if request.method == 'POST':\n        form_gasto = AdicionarGasto(request.POST)\n        if form_gasto.is_valid:\n            form_gasto.save()\n            return redirect('/index/')\n        else:",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -872,7 +864,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def alterar_gasto(request):\n    gasto_id = request.POST.get('gasto_id')\n    gasto_nome = request.POST.get('gasto_nome')\n    gasto_valor = request.POST.get('gasto_valor')\n    gasto = Gastos.objects.get(id=gasto_id)\n    if gasto.usuario.id == request.session['usuario']:\n        gasto.gasto = gasto_nome\n        gasto.valor = float(gasto_valor.replace(',', '.'))\n        gasto.save()\n        return redirect('/index/')",
+        "peekOfCode": "def alterar_gasto(request):\n    gasto_id = request.POST.get('gasto_id')\n    gasto_nome = request.POST.get('gasto_nome')\n    gasto_valor = request.POST.get('gasto_valor')\n    gasto = Gastos.objects.get(id=gasto_id)\n    if gasto.usuario.id == request.session['usuario']:\n        gasto.gasto = gasto_nome\n        gasto.valor = float(gasto_valor.replace(',', '.'))\n        gasto.save()\n        return redirect('/tabela_gasto/')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -881,7 +873,16 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def excluir_gasto(request, id):\n    gasto = Gastos.objects.get(id=id).delete()\n    return redirect('/index/')",
+        "peekOfCode": "def excluir_gasto(request, id):\n    gasto = Gastos.objects.get(id=id).delete()\n    return redirect('/tabela_gasto/')\ndef tabela_gasto(request):\n    gastos = Gastos.objects.filter(usuario=request.session['usuario'])\n    return render(request, 'tables/table_gasto.html', {'gastos': gastos})",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "tabela_gasto",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def tabela_gasto(request):\n    gastos = Gastos.objects.filter(usuario=request.session['usuario'])\n    return render(request, 'tables/table_gasto.html', {'gastos': gastos})",
         "detail": "app_core.views",
         "documentation": {}
     },
