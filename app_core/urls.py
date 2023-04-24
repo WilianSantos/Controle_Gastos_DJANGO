@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     path('index/', views.index, name='index'),
     
-    path('login/', views.login, name='login'),
+    path('', views.login, name='login'),
     path('validar_login', views.validar_login, name='validar_login'),
     
     path('registrar/', views.registrar, name='registrar'),
@@ -23,6 +23,8 @@ urlpatterns = [
     
     path('tabela_renda/', views.tabela_renda, name='tabela_renda'),
     path('tabela_gasto/', views.tabela_gasto, name='tabela_gasto'),
+    
+    path('dados/', DadosJSONView.as_view(), name='dados'),
     
     path('sair/', views.sair, name = 'sair')
 ]
