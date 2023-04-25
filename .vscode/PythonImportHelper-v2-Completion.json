@@ -517,14 +517,6 @@
         "documentation": {}
     },
     {
-        "label": "DATABASES",
-        "importPath": "dash_divida.settings",
-        "description": "dash_divida.settings",
-        "isExtraImport": true,
-        "detail": "dash_divida.settings",
-        "documentation": {}
-    },
-    {
         "label": "dj_database_url",
         "kind": 6,
         "isExtraImport": true,

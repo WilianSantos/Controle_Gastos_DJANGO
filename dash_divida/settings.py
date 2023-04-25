@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from dash_divida.settings import DATABASES
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
