@@ -525,6 +525,15 @@
         "documentation": {}
     },
     {
+        "label": "dj_database_url",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dj_database_url",
+        "description": "dj_database_url",
+        "detail": "dj_database_url",
+        "documentation": {}
+    },
+    {
         "label": "settings",
         "importPath": "django.conf",
         "description": "django.conf",
@@ -1129,7 +1138,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.sqlite3',\n#         'NAME': BASE_DIR / 'db.sqlite3',\n#     }\n# }\nDATABASES = {",
+        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# DATABASES = {",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1138,7 +1147,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "DATABASES = {\n    'default': dj_database_url.config()\n}\n# Password validation\n# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# DATABASES = {\n#     'default': dj_database_url.config()\n# }\n# Password validation",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
