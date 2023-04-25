@@ -426,32 +426,6 @@
         "documentation": {}
     },
     {
-        "label": "matplotlib.pyplot",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "matplotlib.pyplot",
-        "description": "matplotlib.pyplot",
-        "detail": "matplotlib.pyplot",
-        "documentation": {}
-    },
-    {
-        "label": "base64",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "base64",
-        "description": "base64",
-        "detail": "base64",
-        "documentation": {}
-    },
-    {
-        "label": "BytesIO",
-        "importPath": "io",
-        "description": "io",
-        "isExtraImport": true,
-        "detail": "io",
-        "documentation": {}
-    },
-    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -489,6 +463,14 @@
         "description": "hashlib",
         "isExtraImport": true,
         "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "mean",
+        "importPath": "statistics",
+        "description": "statistics",
+        "isExtraImport": true,
+        "detail": "statistics",
         "documentation": {}
     },
     {
@@ -802,24 +784,6 @@
         "documentation": {}
     },
     {
-        "label": "get_graph",
-        "kind": 2,
-        "importPath": "app_core.utils",
-        "description": "app_core.utils",
-        "peekOfCode": "def get_graph():\n    buffer = BytesIO()\n    plt.savefig(buffer, format='png')\n    buffer.seek(0)\n    image_png = buffer.getvalue()\n    graph = base64.b64encode(image_png)\n    graph = graph.decode('utf-8')\n    buffer.close()\n    return graph \ndef get_plot(x, y):",
-        "detail": "app_core.utils",
-        "documentation": {}
-    },
-    {
-        "label": "get_plot",
-        "kind": 2,
-        "importPath": "app_core.utils",
-        "description": "app_core.utils",
-        "peekOfCode": "def get_plot(x, y):\n    plt.switch_backend('AGG')\n    plt.figure(figsize=(10,10))\n    plt.title('sale of items')\n    plt.plot(x,y)\n    plt.xticks(rotation=45)\n    plt.xlabel('Meses')\n    plt.ylabel('valores')\n    plt.tight_layout()\n    graph = get_graph()",
-        "detail": "app_core.utils",
-        "documentation": {}
-    },
-    {
         "label": "index",
         "kind": 2,
         "importPath": "app_core.views",
@@ -987,6 +951,15 @@
         "importPath": "app_core.views",
         "description": "app_core.views",
         "peekOfCode": "def relatorio_rendas(request):\n    x = Rendas.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    cont = 0\n    mes = datetime.now().month + 1\n    ano = datetime.now().year\n    for i in range(12): \n        mes -= 1",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "relatorio_renda_gasto",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def relatorio_renda_gasto(request):\n    rendas = Rendas.objects.filter(usuario=request.session['usuario'])\n    gastos = Gastos.objects.filter(usuario=request.session['usuario'])\n    meses_renda = []\n    meses_gasto = []\n    mes = datetime.now().month + 1\n    ano = datetime.now().year\n    for i in range(12): \n        mes -= 1\n        if mes == 0:",
         "detail": "app_core.views",
         "documentation": {}
     },

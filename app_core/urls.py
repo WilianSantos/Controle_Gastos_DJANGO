@@ -26,7 +26,8 @@ urlpatterns = [
     
     path('graficos/', views.graficos, name='graficos'),
     path('relatorio_gastos/', views.relatorio_gastos, name='relatorio_gastos'),
-    path('relatorio_rendas', views.relatorio_rendas, name='relatorio_rendas'),
+    path('relatorio_rendas/', views.relatorio_rendas, name='relatorio_rendas'),
+    path('relatorio_renda_gasto/', views.relatorio_renda_gasto, name='relatorio_renda_gasto'),
     
     path('sair/', views.sair, name = 'sair')
 ]

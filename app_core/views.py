@@ -4,8 +4,7 @@ from django.http.response import HttpResponse, JsonResponse
 
 from hashlib import sha256
 from datetime import datetime
-
-from .utils import get_plot
+from statistics import mean
 
 from .models import Usuario, Rendas, Gastos
 
@@ -38,10 +37,6 @@ def index(request):
         form_gasto = AdicionarGasto()
         form_gasto.fields['usuario'].initial = request.session['usuario']
         
-        meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']
-        valores = [105235, 107697, 110256, 109236, 108859, 109986]
-        chart = get_plot(meses, valores)
-        
         return render(request, 'index.html', {'usuario_logado': usuario_logado,
                                               'usuario': usuario,
                                               'form_renda': form_renda,
@@ -49,8 +44,7 @@ def index(request):
                                               'gastos': gastos,
                                               'form_gasto': form_gasto,
                                               'gasto_mes': gasto_mes,
-                                              'renda_total': renda_total,
-                                              'chart': chart                               
+                                              'renda_total': renda_total                              
         })
     else:
         redirect('/') 
@@ -276,6 +270,40 @@ def relatorio_rendas(request):
         cont += 1
 
     data_json = {'data': data[::-1], 'labels': labels[::-1]}
+     
+    return JsonResponse(data_json)
+
+
+def relatorio_renda_gasto(request):
+    rendas = Rendas.objects.filter(usuario=request.session['usuario'])
+    gastos = Gastos.objects.filter(usuario=request.session['usuario'])
+    
+    
+    meses_renda = []
+    meses_gasto = []
+    mes = datetime.now().month + 1
+    ano = datetime.now().year
+    for i in range(12): 
+        mes -= 1
+        if mes == 0:
+            mes = 12
+            ano -= 1
+        
+        y = sum([i.renda_principal for i in rendas if i.data.month == mes and i.data.year == ano])
+        y += sum([i.renda_secundaria for i in rendas if i.data.month == mes and i.data.year == ano])
+        meses_renda.append(y)
+        
+        x = sum([i.valor for i in gastos if i.data.month == mes and i.data.year == ano])
+        meses_gasto.append(x)
+    
+    data = []
+    labels = ['Média Renda', 'Média Gasto']
+    media_renda = mean(meses_renda)
+    data.append(media_renda)
+    media_gasto = mean(meses_gasto)
+    data.append(media_gasto)
+    
+    data_json = {'data': data[::1], 'labels': labels[::1]}
      
     return JsonResponse(data_json)
     
