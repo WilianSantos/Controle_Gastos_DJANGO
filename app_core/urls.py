@@ -24,7 +24,9 @@ urlpatterns = [
     path('tabela_renda/', views.tabela_renda, name='tabela_renda'),
     path('tabela_gasto/', views.tabela_gasto, name='tabela_gasto'),
     
-    path('dados/', DadosJSONView.as_view(), name='dados'),
+    path('graficos/', views.graficos, name='graficos'),
+    path('relatorio_gastos/', views.relatorio_gastos, name='relatorio_gastos'),
+    path('relatorio_rendas', views.relatorio_rendas, name='relatorio_rendas'),
     
     path('sair/', views.sair, name = 'sair')
 ]

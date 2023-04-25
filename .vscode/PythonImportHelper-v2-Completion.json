@@ -296,6 +296,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -410,6 +426,32 @@
         "documentation": {}
     },
     {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "base64",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -427,10 +469,18 @@
     },
     {
         "label": "HttpResponse",
-        "importPath": "django.http",
-        "description": "django.http",
+        "importPath": "django.http.response",
+        "description": "django.http.response",
         "isExtraImport": true,
-        "detail": "django.http",
+        "detail": "django.http.response",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http.response",
+        "description": "django.http.response",
+        "isExtraImport": true,
+        "detail": "django.http.response",
         "documentation": {}
     },
     {
@@ -680,6 +730,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "app_core.migrations.0020_remove_usuario_renda_total_alter_gastos_data_and_more",
+        "description": "app_core.migrations.0020_remove_usuario_renda_total_alter_gastos_data_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0019_alter_gastos_data_alter_rendas_data_and_more'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='usuario',\n            name='renda_total',\n        ),\n        migrations.AlterField(",
+        "detail": "app_core.migrations.0020_remove_usuario_renda_total_alter_gastos_data_and_more",
+        "documentation": {}
+    },
+    {
         "label": "AppCoreConfig",
         "kind": 6,
         "importPath": "app_core.apps",
@@ -711,7 +770,7 @@
         "kind": 6,
         "importPath": "app_core.models",
         "description": "app_core.models",
-        "peekOfCode": "class Usuario(models.Model):\n    nome = models.CharField(max_length=50)\n    email = models.EmailField()\n    senha = models.CharField(max_length=60)\n    renda_total = models.FloatField(default=0)\n    def __str__(self):\n        return self.nome\n    class Meta:\n        verbose_name = 'Usuario'\n        verbose_name_plural = 'Usuarios'",
+        "peekOfCode": "class Usuario(models.Model):\n    nome = models.CharField(max_length=50)\n    email = models.EmailField()\n    senha = models.CharField(max_length=60)\n    def __str__(self):\n        return self.nome\n    class Meta:\n        verbose_name = 'Usuario'\n        verbose_name_plural = 'Usuarios'\nclass Rendas(models.Model):",
         "detail": "app_core.models",
         "documentation": {}
     },
@@ -738,8 +797,26 @@
         "kind": 5,
         "importPath": "app_core.urls",
         "description": "app_core.urls",
-        "peekOfCode": "urlpatterns = [\n    path('index/', views.index, name='index'),\n    path('login/', views.login, name='login'),\n    path('validar_login', views.validar_login, name='validar_login'),\n    path('registrar/', views.registrar, name='registrar'),\n    path('validar_registrar', views.validar_registrar, name='validar_registrar'),\n    path('adicionar_renda', views.adicionar_renda, name='adicionar_renda'),\n    path('ver_renda/<int:id>', views.ver_renda, name='ver_renda'),\n    path('alterar_renda', views.alterar_renda, name='alterar_renda'),\n    path('excluir_renda/<int:id>', views.excluir_renda, name='excluir_renda'),",
+        "peekOfCode": "urlpatterns = [\n    path('index/', views.index, name='index'),\n    path('', views.login, name='login'),\n    path('validar_login', views.validar_login, name='validar_login'),\n    path('registrar/', views.registrar, name='registrar'),\n    path('validar_registrar', views.validar_registrar, name='validar_registrar'),\n    path('adicionar_renda', views.adicionar_renda, name='adicionar_renda'),\n    path('ver_renda/<int:id>', views.ver_renda, name='ver_renda'),\n    path('alterar_renda', views.alterar_renda, name='alterar_renda'),\n    path('excluir_renda/<int:id>', views.excluir_renda, name='excluir_renda'),",
         "detail": "app_core.urls",
+        "documentation": {}
+    },
+    {
+        "label": "get_graph",
+        "kind": 2,
+        "importPath": "app_core.utils",
+        "description": "app_core.utils",
+        "peekOfCode": "def get_graph():\n    buffer = BytesIO()\n    plt.savefig(buffer, format='png')\n    buffer.seek(0)\n    image_png = buffer.getvalue()\n    graph = base64.b64encode(image_png)\n    graph = graph.decode('utf-8')\n    buffer.close()\n    return graph \ndef get_plot(x, y):",
+        "detail": "app_core.utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_plot",
+        "kind": 2,
+        "importPath": "app_core.utils",
+        "description": "app_core.utils",
+        "peekOfCode": "def get_plot(x, y):\n    plt.switch_backend('AGG')\n    plt.figure(figsize=(10,10))\n    plt.title('sale of items')\n    plt.plot(x,y)\n    plt.xticks(rotation=45)\n    plt.xlabel('Meses')\n    plt.ylabel('valores')\n    plt.tight_layout()\n    graph = get_graph()",
+        "detail": "app_core.utils",
         "documentation": {}
     },
     {
@@ -747,7 +824,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def index(request):\n    if request.session.get('usuario'):\n        usuario_logado = request.session.get('usuario')\n        usuario = Usuario.objects.get(id=request.session['usuario'])\n        rendas = Rendas.objects.filter(usuario=request.session['usuario'])\n        renda_total = 0\n        for renda in rendas:\n            renda_total += renda.renda_principal\n            renda_total += renda.renda_secundaria\n        usuario.renda_total = renda_total",
+        "peekOfCode": "def index(request):\n    if request.session.get('usuario'):\n        usuario_logado = request.session.get('usuario')\n        usuario = Usuario.objects.get(id=request.session['usuario'])\n        rendas = Rendas.objects.filter(usuario=request.session['usuario'])\n        renda_total = 0\n        for renda in rendas:\n            renda_total += renda.renda_principal\n            renda_total += renda.renda_secundaria\n        form_renda = AdicionarRenda()",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -783,7 +860,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def validar_login(request):\n    email = request.POST.get('email')\n    senha = request.POST.get('senha')\n    senha = sha256(senha.encode()).hexdigest()\n    usuario = Usuario.objects.filter(email=email).filter(senha=senha)\n    if len(usuario) == 0:\n        return redirect('/login/?status=1')\n    elif len(usuario) > 0:\n        request.session['usuario'] = usuario[0].id\n        return redirect('/index/')",
+        "peekOfCode": "def validar_login(request):\n    email = request.POST.get('email')\n    senha = request.POST.get('senha')\n    senha = sha256(senha.encode()).hexdigest()\n    usuario = Usuario.objects.filter(email=email).filter(senha=senha)\n    if len(usuario) == 0:\n        return redirect('/?status=1')\n    elif len(usuario) > 0:\n        request.session['usuario'] = usuario[0].id\n        return redirect('/index/')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -792,7 +869,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def sair(request):\n    request.session.flush()\n    return redirect('/login/')\ndef adicionar_renda(request):\n    if request.method == 'POST':\n        form_renda = AdicionarRenda(request.POST)\n        if form_renda.is_valid:\n            form_renda.save()\n            return redirect('/index/')\n        else:",
+        "peekOfCode": "def sair(request):\n    request.session.flush()\n    return redirect('/')\ndef adicionar_renda(request):\n    if request.method == 'POST':\n        form_renda = AdicionarRenda(request.POST)\n        if form_renda.is_valid:\n            form_renda.save()\n            return redirect('/index/')\n        else:",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -810,7 +887,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def ver_renda(request, id):\n    if request.session.get('usuario'):\n        renda = Rendas.objects.get(id=id)\n        if request.session.get('usuario') == renda.usuario.id:\n            return render(request, 'forms/form_renda.html', {'renda': renda})\n        else:\n            return HttpResponse('Esta não é uma renda sua')\n    return redirect('/login/?status=2')\ndef alterar_renda(request):\n    renda_id = request.POST.get('renda_id')",
+        "peekOfCode": "def ver_renda(request, id):\n    if request.session.get('usuario'):\n        renda = Rendas.objects.get(id=id)\n        if request.session.get('usuario') == renda.usuario.id:\n            return render(request, 'forms/form_renda.html', {'renda': renda})\n        else:\n            return HttpResponse('Esta não é uma renda sua')\n    return redirect('/?status=2')\ndef alterar_renda(request):\n    renda_id = request.POST.get('renda_id')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -855,7 +932,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def ver_gasto(request, id):\n    if request.session.get('usuario'):\n        gasto = Gastos.objects.get(id=id)\n        if request.session.get('usuario') == gasto.usuario.id:\n            return render(request, 'forms/form_gasto.html', {'gasto': gasto})\n        else:\n            return HttpResponse('Esta não é uma renda sua') \n    else:\n        return redirect('/login/')\ndef alterar_gasto(request):",
+        "peekOfCode": "def ver_gasto(request, id):\n    if request.session.get('usuario'):\n        gasto = Gastos.objects.get(id=id)\n        if request.session.get('usuario') == gasto.usuario.id:\n            return render(request, 'forms/form_gasto.html', {'gasto': gasto})\n        else:\n            return HttpResponse('Esta não é uma renda sua') \n    else:\n        return redirect('/')\ndef alterar_gasto(request):",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -873,7 +950,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def excluir_gasto(request, id):\n    gasto = Gastos.objects.get(id=id).delete()\n    return redirect('/tabela_gasto/')\ndef tabela_gasto(request):\n    gastos = Gastos.objects.filter(usuario=request.session['usuario'])\n    return render(request, 'tables/table_gasto.html', {'gastos': gastos})",
+        "peekOfCode": "def excluir_gasto(request, id):\n    gasto = Gastos.objects.get(id=id).delete()\n    return redirect('/tabela_gasto/')\ndef tabela_gasto(request):\n    gastos = Gastos.objects.filter(usuario=request.session['usuario'])\n    return render(request, 'tables/table_gasto.html', {'gastos': gastos})\ndef graficos(request):\n    return render(request, 'charts/charts.html')\ndef relatorio_gastos(request):\n    x = Gastos.objects.filter(usuario=request.session['usuario'])",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -882,7 +959,34 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def tabela_gasto(request):\n    gastos = Gastos.objects.filter(usuario=request.session['usuario'])\n    return render(request, 'tables/table_gasto.html', {'gastos': gastos})",
+        "peekOfCode": "def tabela_gasto(request):\n    gastos = Gastos.objects.filter(usuario=request.session['usuario'])\n    return render(request, 'tables/table_gasto.html', {'gastos': gastos})\ndef graficos(request):\n    return render(request, 'charts/charts.html')\ndef relatorio_gastos(request):\n    x = Gastos.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "graficos",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def graficos(request):\n    return render(request, 'charts/charts.html')\ndef relatorio_gastos(request):\n    x = Gastos.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    cont = 0\n    mes = datetime.now().month + 1\n    ano = datetime.now().year",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "relatorio_gastos",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def relatorio_gastos(request):\n    x = Gastos.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    cont = 0\n    mes = datetime.now().month + 1\n    ano = datetime.now().year\n    for i in range(12): \n        mes -= 1",
+        "detail": "app_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "relatorio_rendas",
+        "kind": 2,
+        "importPath": "app_core.views",
+        "description": "app_core.views",
+        "peekOfCode": "def relatorio_rendas(request):\n    x = Rendas.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    cont = 0\n    mes = datetime.now().month + 1\n    ano = datetime.now().year\n    for i in range(12): \n        mes -= 1",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -1008,7 +1112,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'app_core',\n]\nMIDDLEWARE = [",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'app_core',\n    'chartjs',\n]",
         "detail": "dash_divida.settings",
         "documentation": {}
     },

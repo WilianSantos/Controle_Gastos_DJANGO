@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.http import HttpResponse
+from django.http.response import HttpResponse, JsonResponse
 
 from hashlib import sha256
 from datetime import datetime
+
+from .utils import get_plot
 
 from .models import Usuario, Rendas, Gastos
 
@@ -21,8 +23,7 @@ def index(request):
         for renda in rendas:
             renda_total += renda.renda_principal
             renda_total += renda.renda_secundaria
-        usuario.renda_total = renda_total
-        usuario.save()
+
         
         form_renda = AdicionarRenda()
         form_renda.fields['usuario'].initial = request.session['usuario']
@@ -37,6 +38,9 @@ def index(request):
         form_gasto = AdicionarGasto()
         form_gasto.fields['usuario'].initial = request.session['usuario']
         
+        meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']
+        valores = [105235, 107697, 110256, 109236, 108859, 109986]
+        chart = get_plot(meses, valores)
         
         return render(request, 'index.html', {'usuario_logado': usuario_logado,
                                               'usuario': usuario,
@@ -44,10 +48,12 @@ def index(request):
                                               'rendas': rendas,
                                               'gastos': gastos,
                                               'form_gasto': form_gasto,
-                                              'gasto_mes': gasto_mes                                
+                                              'gasto_mes': gasto_mes,
+                                              'renda_total': renda_total,
+                                              'chart': chart                               
         })
     else:
-        redirect('/login/') 
+        redirect('/') 
     
     
 def registrar(request):
@@ -109,17 +115,17 @@ def validar_login(request):
     usuario = Usuario.objects.filter(email=email).filter(senha=senha)
 
     if len(usuario) == 0:
-        return redirect('/login/?status=1')
+        return redirect('/?status=1')
     elif len(usuario) > 0:
         request.session['usuario'] = usuario[0].id
         return redirect('/index/')
 
-    return redirect('/login/')
+    return redirect('/')
 
 
 def sair(request):
     request.session.flush()
-    return redirect('/login/')
+    return redirect('/')
 
 
 def adicionar_renda(request):
@@ -141,7 +147,7 @@ def ver_renda(request, id):
             return render(request, 'forms/form_renda.html', {'renda': renda})
         else:
             return HttpResponse('Esta não é uma renda sua')
-    return redirect('/login/?status=2')
+    return redirect('/?status=2')
 
 
 def alterar_renda(request):
@@ -157,7 +163,7 @@ def alterar_renda(request):
         renda.save()
         return redirect('/tabela_renda/')
     else:
-        return redirect('/login/')
+        return redirect('/')
     
     
 def excluir_renda(request, id):
@@ -189,7 +195,7 @@ def ver_gasto(request, id):
         else:
             return HttpResponse('Esta não é uma renda sua') 
     else:
-        return redirect('/login/')
+        return redirect('/')
     
     
 def alterar_gasto(request):
@@ -205,7 +211,7 @@ def alterar_gasto(request):
         gasto.save()
         return redirect('/tabela_gasto/')
     else:
-        return redirect('/login/')
+        return redirect('/')
     
     
 def excluir_gasto(request, id):
@@ -217,3 +223,59 @@ def tabela_gasto(request):
     gastos = Gastos.objects.filter(usuario=request.session['usuario'])
     
     return render(request, 'tables/table_gasto.html', {'gastos': gastos})
+
+
+def graficos(request):
+    return render(request, 'charts/charts.html')
+
+
+def relatorio_gastos(request):
+    x = Gastos.objects.filter(usuario=request.session['usuario'])
+    
+    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+    data = []
+    labels = []
+    cont = 0
+    mes = datetime.now().month + 1
+    ano = datetime.now().year
+    for i in range(12): 
+        mes -= 1
+        if mes == 0:
+            mes = 12
+            ano -= 1
+        
+        y = sum([i.valor for i in x if i.data.month == mes and i.data.year == ano])
+        labels.append(meses[mes-1])
+        data.append(y)
+        cont += 1
+
+    data_json = {'data': data[::-1], 'labels': labels[::-1]}
+     
+    return JsonResponse(data_json)
+
+
+def relatorio_rendas(request):
+    x = Rendas.objects.filter(usuario=request.session['usuario'])
+    
+    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+    data = []
+    labels = []
+    cont = 0
+    mes = datetime.now().month + 1
+    ano = datetime.now().year
+    for i in range(12): 
+        mes -= 1
+        if mes == 0:
+            mes = 12
+            ano -= 1
+        
+        y = sum([i.renda_principal for i in x if i.data.month == mes and i.data.year == ano])
+        y += sum([i.renda_secundaria for i in x if i.data.month == mes and i.data.year == ano])
+        labels.append(meses[mes-1])
+        data.append(y)
+        cont += 1
+
+    data_json = {'data': data[::-1], 'labels': labels[::-1]}
+     
+    return JsonResponse(data_json)
+    

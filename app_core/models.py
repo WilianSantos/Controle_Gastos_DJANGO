@@ -8,7 +8,6 @@ class Usuario(models.Model):
     nome = models.CharField(max_length=50)
     email = models.EmailField()
     senha = models.CharField(max_length=60)
-    renda_total = models.FloatField(default=0)
     
     def __str__(self):
         return self.nome
