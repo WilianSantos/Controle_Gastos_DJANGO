@@ -517,6 +517,14 @@
         "documentation": {}
     },
     {
+        "label": "DATABASES",
+        "importPath": "dash_divida.settings",
+        "description": "dash_divida.settings",
+        "isExtraImport": true,
+        "detail": "dash_divida.settings",
+        "documentation": {}
+    },
+    {
         "label": "settings",
         "importPath": "django.conf",
         "description": "django.conf",
@@ -1121,7 +1129,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.sqlite3',\n#         'NAME': BASE_DIR / 'db.sqlite3',\n#     }\n# }\nDATABASES = {",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1130,7 +1138,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "peekOfCode": "DATABASES = {\n    'default': dj_database_url.config()\n}\n# Password validation\n# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1184,7 +1192,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\nSTATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')\nMEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\nSTATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')\nMEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1193,7 +1201,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')\nMEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')\nMEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1202,7 +1210,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "MEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1211,7 +1219,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1220,7 +1228,16 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
+        "detail": "dash_divida.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGOUT_REDIRECT_URL",
+        "kind": 5,
+        "importPath": "dash_divida.settings",
+        "description": "dash_divida.settings",
+        "peekOfCode": "LOGOUT_REDIRECT_URL = '/'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
