@@ -33,9 +33,13 @@ def index(request):
         for gasto in gastos:
             if gasto.data.month == mes_atual:
                 gasto_mes += gasto.valor
+                
+            renda_total -= gasto.valor
             
         form_gasto = AdicionarGasto()
         form_gasto.fields['usuario'].initial = request.session['usuario']
+        
+        
         
         return render(request, 'index.html', {'usuario_logado': usuario_logado,
                                               'usuario': usuario,

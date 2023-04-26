@@ -1,8 +1,8 @@
-__pycache__
+*__pycache__/
 *.*~
 *.pyc
 .idea
 *node_modules/
 .env
 *template
-*dashbord_divida_env
+*dashbord_divida_env/
