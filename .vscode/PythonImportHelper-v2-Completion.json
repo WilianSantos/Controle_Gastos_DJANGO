@@ -1,282 +1,27 @@
 [
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "datetime",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "django.db",
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "datetime",
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -326,31 +71,6 @@
         "importPath": "django.db.models.deletion",
         "description": "django.db.models.deletion",
         "detail": "django.db.models.deletion",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "datetime",
-        "description": "datetime",
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -554,179 +274,17 @@
         "kind": 6,
         "importPath": "app_core.migrations.0001_initial",
         "description": "app_core.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Usuario',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('nome', models.CharField(max_length=50, verbose_name='Nome')),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Usuario',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('nome', models.CharField(max_length=50)),",
         "detail": "app_core.migrations.0001_initial",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "app_core.migrations.0002_rename_renda_rendas_and_more",
-        "description": "app_core.migrations.0002_rename_renda_rendas_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0001_initial'),\n    ]\n    operations = [\n        migrations.RenameModel(\n            old_name='Renda',\n            new_name='Rendas',\n        ),\n        migrations.RenameField(",
-        "detail": "app_core.migrations.0002_rename_renda_rendas_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0003_alter_gastos_options_alter_rendas_options_and_more",
-        "description": "app_core.migrations.0003_alter_gastos_options_alter_rendas_options_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0002_rename_renda_rendas_and_more'),\n    ]\n    operations = [\n        migrations.AlterModelOptions(\n            name='gastos',\n            options={'verbose_name': 'Gasto', 'verbose_name_plural': 'Gastos'},\n        ),\n        migrations.AlterModelOptions(",
-        "detail": "app_core.migrations.0003_alter_gastos_options_alter_rendas_options_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0004_remove_usuario_ativo",
-        "description": "app_core.migrations.0004_remove_usuario_ativo",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0003_alter_gastos_options_alter_rendas_options_and_more'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='usuario',\n            name='ativo',\n        ),\n    ]",
-        "detail": "app_core.migrations.0004_remove_usuario_ativo",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0005_alter_gastos_data_alter_gastos_gasto_and_more",
-        "description": "app_core.migrations.0005_alter_gastos_data_alter_gastos_gasto_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0004_remove_usuario_ativo'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateTimeField(default=datetime.datetime(2023, 4, 21, 18, 24, 35, 632241)),\n        ),",
-        "detail": "app_core.migrations.0005_alter_gastos_data_alter_gastos_gasto_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0006_alter_gastos_data",
-        "description": "app_core.migrations.0006_alter_gastos_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0005_alter_gastos_data_alter_gastos_gasto_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateTimeField(default=datetime.datetime(2023, 4, 21, 18, 27, 57, 555285)),\n        ),",
-        "detail": "app_core.migrations.0006_alter_gastos_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0007_alter_gastos_data_alter_rendas_data_and_more",
-        "description": "app_core.migrations.0007_alter_gastos_data_alter_rendas_data_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0006_alter_gastos_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateTimeField(default=datetime.datetime(2023, 4, 21, 18, 29, 30, 251184)),\n        ),",
-        "detail": "app_core.migrations.0007_alter_gastos_data_alter_rendas_data_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0008_alter_gastos_data_alter_rendas_data_and_more",
-        "description": "app_core.migrations.0008_alter_gastos_data_alter_rendas_data_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0007_alter_gastos_data_alter_rendas_data_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateTimeField(default=datetime.datetime(2023, 4, 21, 18, 31, 32, 987534)),\n        ),",
-        "detail": "app_core.migrations.0008_alter_gastos_data_alter_rendas_data_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0009_alter_gastos_data_alter_rendas_data",
-        "description": "app_core.migrations.0009_alter_gastos_data_alter_rendas_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0008_alter_gastos_data_alter_rendas_data_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateTimeField(default=datetime.datetime(2023, 4, 21, 18, 34, 57, 825281)),\n        ),",
-        "detail": "app_core.migrations.0009_alter_gastos_data_alter_rendas_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0010_alter_gastos_data_alter_rendas_data",
-        "description": "app_core.migrations.0010_alter_gastos_data_alter_rendas_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0009_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateTimeField(default=datetime.datetime(2023, 4, 21, 18, 36, 39, 526635)),\n        ),",
-        "detail": "app_core.migrations.0010_alter_gastos_data_alter_rendas_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0011_alter_gastos_data_alter_rendas_data",
-        "description": "app_core.migrations.0011_alter_gastos_data_alter_rendas_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0010_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateTimeField(default=datetime.datetime(2023, 4, 21, 18, 38, 11, 258585)),\n        ),",
-        "detail": "app_core.migrations.0011_alter_gastos_data_alter_rendas_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0012_alter_gastos_data_alter_rendas_data",
-        "description": "app_core.migrations.0012_alter_gastos_data_alter_rendas_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0011_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateTimeField(default=datetime.datetime(2023, 4, 21, 19, 39, 3, 100562)),\n        ),",
-        "detail": "app_core.migrations.0012_alter_gastos_data_alter_rendas_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0013_alter_gastos_data_alter_rendas_data",
-        "description": "app_core.migrations.0013_alter_gastos_data_alter_rendas_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0012_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 22, 12, 21, 40, 956016)),\n        ),",
-        "detail": "app_core.migrations.0013_alter_gastos_data_alter_rendas_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0014_alter_gastos_data_alter_rendas_data_and_more",
-        "description": "app_core.migrations.0014_alter_gastos_data_alter_rendas_data_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0013_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 22, 13, 15, 47, 997070)),\n        ),",
-        "detail": "app_core.migrations.0014_alter_gastos_data_alter_rendas_data_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0015_alter_gastos_data_alter_rendas_data",
-        "description": "app_core.migrations.0015_alter_gastos_data_alter_rendas_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0014_alter_gastos_data_alter_rendas_data_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 22, 16, 19, 58, 778454, tzinfo=datetime.timezone.utc)),\n        ),",
-        "detail": "app_core.migrations.0015_alter_gastos_data_alter_rendas_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0016_alter_gastos_data_alter_rendas_data",
-        "description": "app_core.migrations.0016_alter_gastos_data_alter_rendas_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0015_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 22, 16, 22, 32, 336835, tzinfo=datetime.timezone.utc)),\n        ),",
-        "detail": "app_core.migrations.0016_alter_gastos_data_alter_rendas_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0017_alter_gastos_data_alter_rendas_data",
-        "description": "app_core.migrations.0017_alter_gastos_data_alter_rendas_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0016_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 22, 13, 26, 35, 9991)),\n        ),",
-        "detail": "app_core.migrations.0017_alter_gastos_data_alter_rendas_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0018_alter_gastos_data_alter_rendas_data",
-        "description": "app_core.migrations.0018_alter_gastos_data_alter_rendas_data",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0017_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 22, 13, 32, 58, 721349)),\n        ),",
-        "detail": "app_core.migrations.0018_alter_gastos_data_alter_rendas_data",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0019_alter_gastos_data_alter_rendas_data_and_more",
-        "description": "app_core.migrations.0019_alter_gastos_data_alter_rendas_data_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0018_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 22, 13, 33, 18, 763779)),\n        ),",
-        "detail": "app_core.migrations.0019_alter_gastos_data_alter_rendas_data_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "app_core.migrations.0020_remove_usuario_renda_total_alter_gastos_data_and_more",
-        "description": "app_core.migrations.0020_remove_usuario_renda_total_alter_gastos_data_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0019_alter_gastos_data_alter_rendas_data_and_more'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='usuario',\n            name='renda_total',\n        ),\n        migrations.AlterField(",
-        "detail": "app_core.migrations.0020_remove_usuario_renda_total_alter_gastos_data_and_more",
+        "importPath": "app_core.migrations.0002_alter_gastos_data_alter_rendas_data",
+        "description": "app_core.migrations.0002_alter_gastos_data_alter_rendas_data",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 28, 11, 50, 29, 487468)),\n        ),",
+        "detail": "app_core.migrations.0002_alter_gastos_data_alter_rendas_data",
         "documentation": {}
     },
     {
@@ -797,7 +355,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def index(request):\n    if request.session.get('usuario'):\n        usuario_logado = request.session.get('usuario')\n        usuario = Usuario.objects.get(id=request.session['usuario'])\n        rendas = Rendas.objects.filter(usuario=request.session['usuario'])\n        renda_total = 0\n        for renda in rendas:\n            renda_total += renda.renda_principal\n            renda_total += renda.renda_secundaria\n        form_renda = AdicionarRenda()",
+        "peekOfCode": "def index(request):\n    if request.session.get('usuario'):\n        usuario_logado = request.session.get('usuario')    \n        usuario = Usuario.objects.get(id=request.session['usuario'])\n        rendas = Rendas.objects.filter(usuario=request.session['usuario'])\n        renda_total = 0\n        for renda in rendas:\n            renda_total += renda.renda_principal\n            renda_total += renda.renda_secundaria\n        form_renda = AdicionarRenda()",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -941,7 +499,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def graficos(request):\n    return render(request, 'charts/charts.html')\ndef relatorio_gastos(request):\n    x = Gastos.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    cont = 0\n    mes = datetime.now().month + 1\n    ano = datetime.now().year",
+        "peekOfCode": "def graficos(request):\n    return render(request, 'charts/charts.html')\ndef relatorio_gastos(request):\n    x = Gastos.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    mes = datetime.now().month + 1\n    ano = datetime.now().year\n    for i in range(12): ",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -950,7 +508,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def relatorio_gastos(request):\n    x = Gastos.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    cont = 0\n    mes = datetime.now().month + 1\n    ano = datetime.now().year\n    for i in range(12): \n        mes -= 1",
+        "peekOfCode": "def relatorio_gastos(request):\n    x = Gastos.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    mes = datetime.now().month + 1\n    ano = datetime.now().year\n    for i in range(12): \n        mes -= 1\n        if mes == 0:",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -959,7 +517,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def relatorio_rendas(request):\n    x = Rendas.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    cont = 0\n    mes = datetime.now().month + 1\n    ano = datetime.now().year\n    for i in range(12): \n        mes -= 1",
+        "peekOfCode": "def relatorio_rendas(request):\n    x = Rendas.objects.filter(usuario=request.session['usuario'])\n    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']\n    data = []\n    labels = []\n    mes = datetime.now().month + 1\n    ano = datetime.now().year\n    for i in range(12): \n        mes -= 1\n        if mes == 0:",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -1058,7 +616,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-18^m6ip6vtuz&1aq8x5@6f@wh_)#*15d)6mmx-jejd5rx!w87v'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-18^m6ip6vtuz&1aq8x5@6f@wh_)#*15d)6mmx-jejd5rx!w87v'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1067,7 +625,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-18^m6ip6vtuz&1aq8x5@6f@wh_)#*15d)6mmx-jejd5rx!w87v'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-18^m6ip6vtuz&1aq8x5@6f@wh_)#*15d)6mmx-jejd5rx!w87v'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1076,7 +634,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1130,7 +688,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# DATABASES = {",
+        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': dj_database_url.config()\n}\n# Password validation\n# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -1139,7 +697,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# DATABASES = {\n#     'default': dj_database_url.config()\n# }\n# Password validation",
+        "peekOfCode": "DATABASES = {\n    'default': dj_database_url.config()\n}\n# Password validation\n# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {",
         "detail": "dash_divida.settings",
         "documentation": {}
     },

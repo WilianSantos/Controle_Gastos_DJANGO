@@ -1,1 +1,1 @@
-web: gunicorn dashbord_divida.wsgi --log-file -
+web: gunicorn dash_divida.wsgi --log-file -

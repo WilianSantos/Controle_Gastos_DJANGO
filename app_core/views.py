@@ -13,8 +13,7 @@ from .forms import AdicionarRenda, AdicionarGasto
 
 def index(request):
     if request.session.get('usuario'):
-        usuario_logado = request.session.get('usuario')
-        
+        usuario_logado = request.session.get('usuario')    
         usuario = Usuario.objects.get(id=request.session['usuario'])
         
         rendas = Rendas.objects.filter(usuario=request.session['usuario'])
@@ -22,8 +21,7 @@ def index(request):
         for renda in rendas:
             renda_total += renda.renda_principal
             renda_total += renda.renda_secundaria
-
-        
+       
         form_renda = AdicionarRenda()
         form_renda.fields['usuario'].initial = request.session['usuario']
         
@@ -37,9 +35,7 @@ def index(request):
             renda_total -= gasto.valor
             
         form_gasto = AdicionarGasto()
-        form_gasto.fields['usuario'].initial = request.session['usuario']
-        
-        
+        form_gasto.fields['usuario'].initial = request.session['usuario']            
         
         return render(request, 'index.html', {'usuario_logado': usuario_logado,
                                               'usuario': usuario,
@@ -233,7 +229,6 @@ def relatorio_gastos(request):
     meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
     data = []
     labels = []
-    cont = 0
     mes = datetime.now().month + 1
     ano = datetime.now().year
     for i in range(12): 
@@ -258,7 +253,6 @@ def relatorio_rendas(request):
     meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
     data = []
     labels = []
-    cont = 0
     mes = datetime.now().month + 1
     ano = datetime.now().year
     for i in range(12): 
@@ -271,7 +265,6 @@ def relatorio_rendas(request):
         y += sum([i.renda_secundaria for i in x if i.data.month == mes and i.data.year == ano])
         labels.append(meses[mes-1])
         data.append(y)
-        cont += 1
 
     data_json = {'data': data[::-1], 'labels': labels[::-1]}
      
