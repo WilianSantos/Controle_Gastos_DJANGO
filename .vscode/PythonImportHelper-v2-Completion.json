@@ -682,7 +682,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-18^m6ip6vtuz&1aq8x5@6f@wh_)#*15d)6mmx-jejd5rx!w87v'#os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -691,7 +691,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-18^m6ip6vtuz&1aq8x5@6f@wh_)#*15d)6mmx-jejd5rx!w87v'#os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -754,7 +754,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\n# DATABASES = {\n#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600)\n# }\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'dash_divida',",
+        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600)\n}\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.mysql',\n#         'NAME': 'dash_divida',",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -763,7 +763,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'dash_divida',\n        'USER': 'root',\n        'PASSWORD': 'wilian',\n        'HOST': 'localhost',\n        'PORT': '3306',\n    }\n}",
+        "peekOfCode": "DATABASES = {\n    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600)\n}\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.mysql',\n#         'NAME': 'dash_divida',\n#         'USER': 'root',\n#         'PASSWORD': 'wilian',\n#         'HOST': 'localhost',",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
