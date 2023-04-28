@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@mui/x-data-grid": "^6.2.1",
-    "chart.js": "^4.2.1",
-    "datatables.net-bs5": "^1.13.4",
-    "jquery": "^3.6.4"
-  }
-}
