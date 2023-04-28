@@ -270,6 +270,22 @@
         "documentation": {}
     },
     {
+        "label": "Cling",
+        "importPath": "dj_static",
+        "description": "dj_static",
+        "isExtraImport": true,
+        "detail": "dj_static",
+        "documentation": {}
+    },
+    {
+        "label": "MediaCling",
+        "importPath": "dj_static",
+        "description": "dj_static",
+        "isExtraImport": true,
+        "detail": "dj_static",
+        "documentation": {}
+    },
+    {
         "label": "Migration",
         "kind": 6,
         "importPath": "app_core.migrations.0001_initial",
@@ -346,7 +362,7 @@
         "kind": 5,
         "importPath": "app_core.urls",
         "description": "app_core.urls",
-        "peekOfCode": "urlpatterns = [\n    path('index/', views.index, name='index'),\n    path('', views.login, name='login'),\n    path('validar_login', views.validar_login, name='validar_login'),\n    path('registrar/', views.registrar, name='registrar'),\n    path('validar_registrar', views.validar_registrar, name='validar_registrar'),\n    path('adicionar_renda', views.adicionar_renda, name='adicionar_renda'),\n    path('ver_renda/<int:id>', views.ver_renda, name='ver_renda'),\n    path('alterar_renda', views.alterar_renda, name='alterar_renda'),\n    path('excluir_renda/<int:id>', views.excluir_renda, name='excluir_renda'),",
+        "peekOfCode": "urlpatterns = [\n    path('index/', views.index, name='index'),\n    path('login/', views.login, name='login'),\n    path('validar_login', views.validar_login, name='validar_login'),\n    path('registrar/', views.registrar, name='registrar'),\n    path('validar_registrar', views.validar_registrar, name='validar_registrar'),\n    path('adicionar_renda', views.adicionar_renda, name='adicionar_renda'),\n    path('ver_renda/<int:id>', views.ver_renda, name='ver_renda'),\n    path('alterar_renda', views.alterar_renda, name='alterar_renda'),\n    path('excluir_renda/<int:id>', views.excluir_renda, name='excluir_renda'),",
         "detail": "app_core.urls",
         "documentation": {}
     },
@@ -391,7 +407,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def validar_login(request):\n    email = request.POST.get('email')\n    senha = request.POST.get('senha')\n    senha = sha256(senha.encode()).hexdigest()\n    usuario = Usuario.objects.filter(email=email).filter(senha=senha)\n    if len(usuario) == 0:\n        return redirect('/?status=1')\n    elif len(usuario) > 0:\n        request.session['usuario'] = usuario[0].id\n        return redirect('/index/')",
+        "peekOfCode": "def validar_login(request):\n    email = request.POST.get('email')\n    senha = request.POST.get('senha')\n    senha = sha256(senha.encode()).hexdigest()\n    usuario = Usuario.objects.filter(email=email).filter(senha=senha)\n    if len(usuario) == 0:\n        return redirect('/login/?status=1')\n    elif len(usuario) > 0:\n        request.session['usuario'] = usuario[0].id\n        return redirect('/index/')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -418,7 +434,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def ver_renda(request, id):\n    if request.session.get('usuario'):\n        renda = Rendas.objects.get(id=id)\n        if request.session.get('usuario') == renda.usuario.id:\n            return render(request, 'forms/form_renda.html', {'renda': renda})\n        else:\n            return HttpResponse('Esta não é uma renda sua')\n    return redirect('/?status=2')\ndef alterar_renda(request):\n    renda_id = request.POST.get('renda_id')",
+        "peekOfCode": "def ver_renda(request, id):\n    if request.session.get('usuario'):\n        renda = Rendas.objects.get(id=id)\n        if request.session.get('usuario') == renda.usuario.id:\n            return render(request, 'forms/form_renda.html', {'renda': renda})\n        else:\n            return HttpResponse('Esta não é uma renda sua')\n    return redirect('/login/?status=2')\ndef alterar_renda(request):\n    renda_id = request.POST.get('renda_id')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -463,7 +479,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def ver_gasto(request, id):\n    if request.session.get('usuario'):\n        gasto = Gastos.objects.get(id=id)\n        if request.session.get('usuario') == gasto.usuario.id:\n            return render(request, 'forms/form_gasto.html', {'gasto': gasto})\n        else:\n            return HttpResponse('Esta não é uma renda sua') \n    else:\n        return redirect('/')\ndef alterar_gasto(request):",
+        "peekOfCode": "def ver_gasto(request, id):\n    if request.session.get('usuario'):\n        gasto = Gastos.objects.get(id=id)\n        if request.session.get('usuario') == gasto.usuario.id:\n            return render(request, 'forms/form_gasto.html', {'gasto': gasto})\n        else:\n            return HttpResponse('Esta não é uma renda sua') \n    else:\n        return redirect('/login/')\ndef alterar_gasto(request):",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -814,7 +830,7 @@
         "kind": 5,
         "importPath": "dash_divida.wsgi",
         "description": "dash_divida.wsgi",
-        "peekOfCode": "application = get_wsgi_application()",
+        "peekOfCode": "application = Cling(MediaCling(get_wsgi_application()))",
         "detail": "dash_divida.wsgi",
         "documentation": {}
     },
