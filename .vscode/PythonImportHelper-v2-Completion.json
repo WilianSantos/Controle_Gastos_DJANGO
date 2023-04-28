@@ -751,7 +751,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\nSTATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')\nMEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
+        "peekOfCode": "STATIC_URL = 'static/'\nSTATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')\nMEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = 'login'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -760,7 +760,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')\nMEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
+        "peekOfCode": "STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')\nMEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = 'login'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -769,7 +769,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "MEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
+        "peekOfCode": "MEDIA_URL = 'media/'\nMEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = 'login'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -778,7 +778,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
+        "peekOfCode": "MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = 'login'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -787,7 +787,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = '/'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGOUT_REDIRECT_URL = 'login'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -796,7 +796,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "LOGOUT_REDIRECT_URL = '/'",
+        "peekOfCode": "LOGOUT_REDIRECT_URL = 'login'",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
