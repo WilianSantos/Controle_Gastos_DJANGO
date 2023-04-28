@@ -47,7 +47,7 @@ def index(request):
                                               'renda_total': renda_total                              
         })
     else:
-        redirect('/login/') 
+        redirect('/') 
     
     
 def registrar(request):
@@ -70,7 +70,7 @@ def validar_registrar(request):
     if len(nome.strip()) == 0 or len(email.strip()) == 0:
         return redirect('/registrar/?status=1')
 
-    if len(senha) < 8:
+    if len(senha) < 6:
         return redirect('/registrar/?status=2')
     
     if senha != confirma_senha:
@@ -79,11 +79,11 @@ def validar_registrar(request):
     if len(usuario) > 0:
         return redirect('/registrar/?status=4')
 
+
+
     try:
         senha = sha256(senha.encode()).hexdigest()
-        usuario = Usuario(nome = nome,
-                          senha = senha,
-                          email = email)
+        usuario = Usuario(nome=nome, senha=senha, email=email)
         usuario.save()
 
         return redirect('/registrar/?status=0')
@@ -109,12 +109,12 @@ def validar_login(request):
     usuario = Usuario.objects.filter(email=email).filter(senha=senha)
 
     if len(usuario) == 0:
-        return redirect('/login/?status=1')
+        return redirect('/?status=1')
     elif len(usuario) > 0:
         request.session['usuario'] = usuario[0].id
         return redirect('/index/')
 
-    return redirect('/login/')
+    return redirect('/')
 
 
 def sair(request):
@@ -141,7 +141,7 @@ def ver_renda(request, id):
             return render(request, 'forms/form_renda.html', {'renda': renda})
         else:
             return HttpResponse('Esta não é uma renda sua')
-    return redirect('/login/?status=2')
+    return redirect('/?status=2')
 
 
 def alterar_renda(request):
@@ -157,7 +157,7 @@ def alterar_renda(request):
         renda.save()
         return redirect('/tabela_renda/')
     else:
-        return redirect('/login/')
+        return redirect('/')
     
     
 def excluir_renda(request, id):
@@ -189,7 +189,7 @@ def ver_gasto(request, id):
         else:
             return HttpResponse('Esta não é uma renda sua') 
     else:
-        return redirect('/login/')
+        return redirect('/')
     
     
 def alterar_gasto(request):
@@ -205,7 +205,7 @@ def alterar_gasto(request):
         gasto.save()
         return redirect('/tabela_gasto/')
     else:
-        return redirect('/login/')
+        return redirect('/')
     
     
 def excluir_gasto(request, id):
@@ -240,7 +240,6 @@ def relatorio_gastos(request):
         y = sum([i.valor for i in x if i.data.month == mes and i.data.year == ano])
         labels.append(meses[mes-1])
         data.append(y)
-        cont += 1
 
     data_json = {'data': data[::-1], 'labels': labels[::-1]}
      

@@ -57,6 +57,38 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -304,6 +336,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "app_core.migrations.0003_alter_gastos_data_alter_rendas_data",
+        "description": "app_core.migrations.0003_alter_gastos_data_alter_rendas_data",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0002_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 28, 14, 6, 42, 659048)),\n        ),",
+        "detail": "app_core.migrations.0003_alter_gastos_data_alter_rendas_data",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "app_core.migrations.0004_alter_gastos_data_alter_rendas_data_and_more",
+        "description": "app_core.migrations.0004_alter_gastos_data_alter_rendas_data_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('app_core', '0003_alter_gastos_data_alter_rendas_data'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='gastos',\n            name='data',\n            field=models.DateField(default=datetime.datetime(2023, 4, 28, 14, 46, 58, 314426)),\n        ),",
+        "detail": "app_core.migrations.0004_alter_gastos_data_alter_rendas_data_and_more",
+        "documentation": {}
+    },
+    {
         "label": "AppCoreConfig",
         "kind": 6,
         "importPath": "app_core.apps",
@@ -335,7 +385,7 @@
         "kind": 6,
         "importPath": "app_core.models",
         "description": "app_core.models",
-        "peekOfCode": "class Usuario(models.Model):\n    nome = models.CharField(max_length=50)\n    email = models.EmailField()\n    senha = models.CharField(max_length=60)\n    def __str__(self):\n        return self.nome\n    class Meta:\n        verbose_name = 'Usuario'\n        verbose_name_plural = 'Usuarios'\nclass Rendas(models.Model):",
+        "peekOfCode": "class Usuario(models.Model):\n    nome = models.CharField(max_length=50)\n    email = models.EmailField()\n    senha = models.CharField(max_length=100)\n    def __str__(self):\n        return self.nome\n    class Meta:\n        verbose_name = 'Usuario'\n        verbose_name_plural = 'Usuarios'\nclass Rendas(models.Model):",
         "detail": "app_core.models",
         "documentation": {}
     },
@@ -362,7 +412,7 @@
         "kind": 5,
         "importPath": "app_core.urls",
         "description": "app_core.urls",
-        "peekOfCode": "urlpatterns = [\n    path('index/', views.index, name='index'),\n    path('login/', views.login, name='login'),\n    path('validar_login', views.validar_login, name='validar_login'),\n    path('registrar/', views.registrar, name='registrar'),\n    path('validar_registrar', views.validar_registrar, name='validar_registrar'),\n    path('adicionar_renda', views.adicionar_renda, name='adicionar_renda'),\n    path('ver_renda/<int:id>', views.ver_renda, name='ver_renda'),\n    path('alterar_renda', views.alterar_renda, name='alterar_renda'),\n    path('excluir_renda/<int:id>', views.excluir_renda, name='excluir_renda'),",
+        "peekOfCode": "urlpatterns = [\n    path('index/', views.index, name='index'),\n    path('', views.login, name='login'),\n    path('validar_login', views.validar_login, name='validar_login'),\n    path('registrar/', views.registrar, name='registrar'),\n    path('validar_registrar', views.validar_registrar, name='validar_registrar'),\n    path('adicionar_renda', views.adicionar_renda, name='adicionar_renda'),\n    path('ver_renda/<int:id>', views.ver_renda, name='ver_renda'),\n    path('alterar_renda', views.alterar_renda, name='alterar_renda'),\n    path('excluir_renda/<int:id>', views.excluir_renda, name='excluir_renda'),",
         "detail": "app_core.urls",
         "documentation": {}
     },
@@ -389,7 +439,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def validar_registrar(request):\n    nome = request.POST.get('nome')\n    senha = request.POST.get('senha')\n    confirma_senha = request.POST.get('confirma-senha')\n    email = request.POST.get('email')\n    usuario = Usuario.objects.filter(email=email)\n    if len(nome.strip()) == 0 or len(email.strip()) == 0:\n        return redirect('/registrar/?status=1')\n    if len(senha) < 8:\n        return redirect('/registrar/?status=2')",
+        "peekOfCode": "def validar_registrar(request):\n    nome = request.POST.get('nome')\n    senha = request.POST.get('senha')\n    confirma_senha = request.POST.get('confirma-senha')\n    email = request.POST.get('email')\n    usuario = Usuario.objects.filter(email=email)\n    if len(nome.strip()) == 0 or len(email.strip()) == 0:\n        return redirect('/registrar/?status=1')\n    if len(senha) < 6:\n        return redirect('/registrar/?status=2')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -407,7 +457,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def validar_login(request):\n    email = request.POST.get('email')\n    senha = request.POST.get('senha')\n    senha = sha256(senha.encode()).hexdigest()\n    usuario = Usuario.objects.filter(email=email).filter(senha=senha)\n    if len(usuario) == 0:\n        return redirect('/login/?status=1')\n    elif len(usuario) > 0:\n        request.session['usuario'] = usuario[0].id\n        return redirect('/index/')",
+        "peekOfCode": "def validar_login(request):\n    email = request.POST.get('email')\n    senha = request.POST.get('senha')\n    senha = sha256(senha.encode()).hexdigest()\n    usuario = Usuario.objects.filter(email=email).filter(senha=senha)\n    if len(usuario) == 0:\n        return redirect('/?status=1')\n    elif len(usuario) > 0:\n        request.session['usuario'] = usuario[0].id\n        return redirect('/index/')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -434,7 +484,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def ver_renda(request, id):\n    if request.session.get('usuario'):\n        renda = Rendas.objects.get(id=id)\n        if request.session.get('usuario') == renda.usuario.id:\n            return render(request, 'forms/form_renda.html', {'renda': renda})\n        else:\n            return HttpResponse('Esta não é uma renda sua')\n    return redirect('/login/?status=2')\ndef alterar_renda(request):\n    renda_id = request.POST.get('renda_id')",
+        "peekOfCode": "def ver_renda(request, id):\n    if request.session.get('usuario'):\n        renda = Rendas.objects.get(id=id)\n        if request.session.get('usuario') == renda.usuario.id:\n            return render(request, 'forms/form_renda.html', {'renda': renda})\n        else:\n            return HttpResponse('Esta não é uma renda sua')\n    return redirect('/?status=2')\ndef alterar_renda(request):\n    renda_id = request.POST.get('renda_id')",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -479,7 +529,7 @@
         "kind": 2,
         "importPath": "app_core.views",
         "description": "app_core.views",
-        "peekOfCode": "def ver_gasto(request, id):\n    if request.session.get('usuario'):\n        gasto = Gastos.objects.get(id=id)\n        if request.session.get('usuario') == gasto.usuario.id:\n            return render(request, 'forms/form_gasto.html', {'gasto': gasto})\n        else:\n            return HttpResponse('Esta não é uma renda sua') \n    else:\n        return redirect('/login/')\ndef alterar_gasto(request):",
+        "peekOfCode": "def ver_gasto(request, id):\n    if request.session.get('usuario'):\n        gasto = Gastos.objects.get(id=id)\n        if request.session.get('usuario') == gasto.usuario.id:\n            return render(request, 'forms/form_gasto.html', {'gasto': gasto})\n        else:\n            return HttpResponse('Esta não é uma renda sua') \n    else:\n        return redirect('/')\ndef alterar_gasto(request):",
         "detail": "app_core.views",
         "documentation": {}
     },
@@ -632,7 +682,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-18^m6ip6vtuz&1aq8x5@6f@wh_)#*15d)6mmx-jejd5rx!w87v'#os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -641,7 +691,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "SECRET_KEY = os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-18^m6ip6vtuz&1aq8x5@6f@wh_)#*15d)6mmx-jejd5rx!w87v'#os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -650,7 +700,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -659,7 +709,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'app_core',",
+        "peekOfCode": "ALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'app_core',",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -704,7 +754,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600)\n}\n# Password validation\n# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "peekOfCode": "WSGI_APPLICATION = 'dash_divida.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\n# DATABASES = {\n#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600)\n# }\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'dash_divida',",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
@@ -713,7 +763,7 @@
         "kind": 5,
         "importPath": "dash_divida.settings",
         "description": "dash_divida.settings",
-        "peekOfCode": "DATABASES = {\n    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600)\n}\n# Password validation\n# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'dash_divida',\n        'USER': 'root',\n        'PASSWORD': 'wilian',\n        'HOST': 'localhost',\n        'PORT': '3306',\n    }\n}",
         "detail": "dash_divida.settings",
         "documentation": {}
     },
